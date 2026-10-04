@@ -38,12 +38,13 @@ public class OrderService implements BeanNameAware, ApplicationContextAware {
     }
 
 
-    //    this below method ise used to know the details of the IOC container from which this bean came or created.
+    //    this below method is used to know the details of the IOC container from which this bean came or created.
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("ApplicationContext name is" + applicationContext.getClass());
     }
 
-//    callback methods because we dont call this methods explicitly rather Spring IOC calls this methods
+//    above are called callback methods because we dont call this methods explicitly rather Spring IOC calls this methods
 //    but if we try to setbean("customBean") then it simply prints Bean name is :... but doesn't internally sets the name to the bean.
+//    for eg in setBean IOC setsName as "orderServiceBean" as in @Component("orderServiceBean") so for beanName IOC calls it to set its name.
 }

@@ -18,6 +18,10 @@ public class Main {
         OrderService orderService2 = applicationContext.getBean(OrderService.class);
         System.out.println(orderService1==orderService2);
 //        orderService.placeOrder();
+
+        //        For Payment Service
+        System.out.println("For Payment Gateway Service");
+
     }
 
 //    Best practice is to avoid circular dependency

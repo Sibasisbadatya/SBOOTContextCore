@@ -10,7 +10,7 @@ public class Main {
 //        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class); doesn't have close method
         ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 //        ConfigurableApplicationContext is the child class of ApplicationContext which extends ApplicationContext and has close method
-//        through this applicationContext we acn interact with the IOC
+//        through this applicationContext we can interact with the IOC
         OrderService orderService = applicationContext.getBean(OrderService.class);
         orderService.placeOrder();
         applicationContext.close();
@@ -40,7 +40,7 @@ public class Main {
 // for setter and method injection object creation an ddependency creation happens at different time
 
 // 6.AWARE INTERFACES ARE CALLED
-//details explained inOrderService with OrderService implements BeanNameAware, ApplicationContextAware
+//details explained in OrderService with OrderService implements BeanNameAware, ApplicationContextAware
 
 // 7.INITIALISATION CALLBACKS (after object creation and before service implementation used)
 //    a.InitializingBean(Interface)->used for iniialisation Steps
@@ -57,7 +57,7 @@ public class Main {
 
 // 9.DESTRUCTION CALLBACKS
 //    a.DisposableBean(Interface)->used for destruction Steps
-//    b.destroy Methods (instead of implementing InitializingBean interface we can use
+//    b.destroy Methods (instead of implementing DisposableBean interface we can use
 //    destroy method in the bean class and specify it in the @Bean annotation in the AppConfig class)
 //    c.PreDestroy instead of above 2 we simply write @PostCOnstruct above a method to which we want to destruction.(it comes from jakarta library)
 
